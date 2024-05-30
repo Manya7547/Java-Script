@@ -1,0 +1,16 @@
+# Ignore macOS system files
+.DS_Store
+
+# Node.js dependencies
+node_modules/
+
+# Log files
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Optional npm cache directory
+.npm
+
+# Debug output
+debug.log
