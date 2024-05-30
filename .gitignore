@@ -14,3 +14,4 @@ yarn-error.log
 
 # Debug output
 debug.log
+.DS_Store
