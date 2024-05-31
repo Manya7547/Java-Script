@@ -11,7 +11,7 @@ Primitive Data Types:
 2) bigint - 
 3) string - ""
 4) boolean - true or false
-5) null - it is a standalone value. It can be assigned if we want to keep a variable empty
+5) null - object. it is a standalone value. It can be assigned if we want to keep a variable empty
 6) undefined - variable is declared but value is not defined 
 7) symbol - (used in react) to find uniqueness. 
 

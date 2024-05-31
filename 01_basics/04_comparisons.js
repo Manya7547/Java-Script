@@ -5,7 +5,7 @@
 // console.log(2 != 1);
 
 
-//try to make the two variables should have the same datatype 
+//try to make the two variables of the same datatype 
 // console.log("2" > 1);
 // console.log("02" > 1);
 
@@ -20,6 +20,6 @@ console.log(undefined == 0);
 console.log(undefined > 0);
 console.log(undefined < 0);
 
-// === 
+// === strict check - also checks the data type
 
-console.log("2" === 2);
+console.log("2" === 2); 
