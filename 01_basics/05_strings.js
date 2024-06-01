@@ -7,7 +7,7 @@ console.log(name + repoCount + "Value");
 //string interpolation using back ticks - injects variables
 console.log(`hello my name is ${name} and my repo count is ${repoCount}`);
 
-const game = new String('volleyball');
+const game = new String('volley ball game');
 
 console.log(game[0]);
 console.log(game.__proto__); //?
@@ -29,4 +29,9 @@ console.log(name1.trim());  //removes end spaces
 //replace "%20" inside url with a "-" (real world example)
 const url = "https://manya.com/manya%20sohal"
 console.log(url.replace('%20','-'));
+
+console.log(url.includes('manya'));
+
+const words = game.split(' ');
+console.log(words);
 
