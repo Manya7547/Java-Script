@@ -82,4 +82,58 @@ const users = [
 
 
 //objectname.hasOwnProperty(key) - checks if an object has a given key - returns boolean
-console.log(tinderUser.hasOwnProperty('age'));
+//console.log(tinderUser.hasOwnProperty('age'));
+
+
+/* destructuring an object:
+    - used so that we don't have to use dot operator again and again
+    - stored in another kind of variable 
+*/ 
+
+// const course = {
+//     name: "Data Science",
+//     intructor: "Yuan Wang",
+//     mode: "online"
+// };
+
+console.log(course.name);  //simply prints data science
+
+// const {name} = course;
+// console.log(name);   //now name can be used directly 
+
+//we can define some other name for name also: 
+const {name: courseName} = course;
+console.log(courseName);
+
+
+// sometimes when we pass arguments in a function we destructure the object so that we dont have to use . again and again
+
+const navbar = ({name}) =>{  //here we put the key name coming from an object 
+    console.log("hello");
+}
+
+navbar(name="hitesh");  // calling the navbar function 
+
+
+/* 
+APIs
+- doing things with backend values  
+- they come in a form of JSON - it is like an object
+*/
+
+// this is a json object - key and value are strings 
+// {
+//     "name": "Data Science",
+//     "intructor": "Yuan Wang",
+//     "mode": "online"
+// };
+
+// sometimes APIs come in a form of an Array with number of objects inside it
+
+// [
+//     {},
+//     {},
+//     {},
+//     {}
+// ]
+
