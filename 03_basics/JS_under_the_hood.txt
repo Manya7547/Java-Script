@@ -1,0 +1,82 @@
+*** JavaScript Execution Context ***
+How JavaScript Executes a File Behind the Scenes
+
+JavaScript execution involves two main types of contexts:
+
+1) Global Execution Context:
+    - Defined once and is the default context where code starts executing.
+    - In browsers, this refers to the window object; in Node.js, it refers to the global object.
+    - Works in a single thread.
+
+2) Functional Execution Context:
+    - Created every time a function is called.
+    - Has its own variable environment and execution thread.
+
+3) Eval:
+    - A property of the Global Execution Context used to evaluate code (not recommended for use due to security and performance reasons).
+
+
+*** Execution Phases in JavaScript ***
+
+JavaScript code execution happens in two main phases:
+
+1) Creation Phase:
+    Memory is allocated for variables and functions.
+    Variables are initialized to undefined.
+    Functions are stored with their definitions.
+    
+2) Execution Phase:
+    Variable values are assigned.
+    Functions are executed.
+
+*** Code Execution Example ***
+
+let num1 = 10;
+let num2 = 20;
+function addTwo(num1, num2) {
+    let result = num1 + num2;
+    return result;
+}
+
+let result1 = addTwo(num1, num2);
+let result2 = addTwo(3, 5);
+Internal Execution in JavaScript:
+
+1) Global Execution Context Creation: Memory Creation
+
+    num1 = undefined
+    num2 = undefined
+    addTwo = function definition
+    result1 = undefined
+    result2 = undefined
+
+2) Global Execution Context Execution:
+
+    num1 = 10
+    num2 = 20
+    result1 = addTwo(num1, num2) is called, creating a new execution context for addTwo.
+
+3) Function Execution Context Creation for addTwo(num1, num2):
+
+    num1 = undefined
+    num2 = undefined
+    result = undefined
+    Function Execution Context Execution for addTwo(num1, num2):
+
+    num1 = 10
+    num2 = 20
+    result = 30
+    return result (30 is returned to the global context)
+    Function execution context is deleted after execution.
+
+4) Global Execution Context:
+    result1 = 30
+    result2 = addTwo(3, 5) follows a similar process with a new execution context.
+
+
+*** Call Stack ***
+    Global Execution Context is the first in the call stack.
+    Functions are pushed onto the call stack when invoked.
+    The stack operates in a LIFO (Last In, First Out) manner.
+    After a function execution completes, it is popped from the stack.
+    Finally, the global execution context is popped when execution finishes.
