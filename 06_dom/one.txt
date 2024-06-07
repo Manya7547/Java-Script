@@ -1,0 +1,80 @@
+Notes:
+
+DOM - Document Object Model
+It is a way for web browsers to structure and manage web pages. 
+Think of it like a tree diagram that represents all the elements on a web page. 
+Each part of the page (like headings, paragraphs, images, etc.) is a branch or a leaf on this tree.
+
+Document: It is the whole web page 
+Object: Each element on the web page (like paragraphs, images, buttons).
+Model: A structured way to organize and interact with these elements.
+
+When you open a web page, the browser creates a DOM for that page. 
+This allows programmers to use languages like JavaScript to add, remove, or 
+change parts of the web page dynamically without having to reload the whole page.
+
+For example, if you click a button on a web page and a new paragraph appears, 
+that's the DOM in action. The button click triggers JavaScript code that changes the DOM, 
+which then updates what you see on the screen.
+
+- we can do DOM manupulation in actual web pages 
+
+
+************ Elements and Attributes ************
+
+Element 
+- defines the structure and content of the web page. 
+- represented by tags in the HTML code and usually come in pairs: 
+- an opening tag and a closing tag. Some elements, like <img>, are self-closing.
+
+Attributes
+- provide additional information about HTML elements. 
+- They are included inside the opening tag of an element and typically come in name/value pairs, 
+- separated by an equals sign.
+- class = "xyz" id="title"
+
+
+************ DOM manupulation ************
+
+1) getElementById
+- method used to access a specific element on a web page by its unique ID.
+- used to manipulate or retrieve information from a particular element.
+- we can store this in a const variable and do operations
+
+const title = document.getElementById('title')
+title.setAttribute()
+title.className
+
+document.getElementById('element id') - this gives the whole element with that id. 
+
+document.getElementById('id').className - gives the class name of the element with that id 
+
+document.getElementById('id').getAttribute('id') - gives the element's id 
+
+document.getElementById('id').getAttribute('class') - gives the class name
+
+document.getElementById('id').setAttribute('class', 'test') - changes the attribute value into test. Overwrite.   
+document.getElementById('id').setAttribute('class', 'test heading') - changes the attribute value into test heading. not overwritted.   
+
+- we can change style of an element 
+title.style.backgroundColor = 'blue'
+title.style.padding = "15px" 
+title.style.borderRadius = "15px" - rounded corners
+
+
+************ Taking out content from elements ************
+
+<h1 class="heading" id="title">Learning DOM - Document Object Model </h1>
+
+we know title = document.getElementById('title') which is the above line
+
+By content we mean the text content on the web page
+- title.textContent - gives Learning DOM - Document Object Model
+- title.innerHTML - gives Learning DOM - Document Object Model
+- title.innerText - gives Learning DOM - Document Object Model <span style="display: none;" > Test text</span>
+
+what is the difference??
+textContent: Includes all text content, regardless of CSS visibility.
+innerText: Includes only visible text, ignoring hidden content.
+innerHTML : will give the value of HTML - Learning DOM - Document Object Model <span style="display: none;" > Test text</span>
+
