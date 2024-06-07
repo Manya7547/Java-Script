@@ -36,7 +36,8 @@ Attributes
 
 ************ DOM manupulation ************
 
-1) getElementById
+DOM selectors - getElementById, getElemenyByClassName, getElemenyByName, querySelector
+1) getElementById 
 - method used to access a specific element on a web page by its unique ID.
 - used to manipulate or retrieve information from a particular element.
 - we can store this in a const variable and do operations
@@ -78,3 +79,57 @@ textContent: Includes all text content, regardless of CSS visibility.
 innerText: Includes only visible text, ignoring hidden content.
 innerHTML : will give the value of HTML - Learning DOM - Document Object Model <span style="display: none;" > Test text</span>
 
+
+2) querySelector
+- querySelector is a method in the DOM API that allows you to select elements from the DOM using CSS selectors. 
+- it lets you use the same syntax you use in CSS to select elements in your JavaScript code.
+- document.querySelector(selector)
+- selectors can be class selectors, ID selectors, attribute selectors, pseudo-classes, and more.
+
+document.querySelector('h1') - gives the first h1 element
+document.querySelector('h2') - gives the first h2 element
+document.querySelector('#title') - gives the element with id = title. id is denoted by using #
+document.querySelector('.heading') - gives the element with class='heading'. class is denoted by using .
+document.querySelector('ul') - selectig unordered list 
+
+you can store it's value in a constant and select a nested element
+
+const myUL = document.querySelector('ul')
+myUL.querySelector('li')   - will  give the first list item 
+
+this can be further stored in a variable and we can make changes in this particualr element 
+
+const turnGreen = myUL.querySelector('li') 
+turnGreen.style.padding = '10px';
+turnGreen.style.backgroundColor = 'green';
+
+If i want to select all the items in an unordered list:
+document.querySelectorAll('li')  - this gives a node list (it is not an array)
+
+In a nodeList we cannot use .style directly - we have to use forEach() loop to change each individual element 
+
+const myList = document.querySelectorAll('li')
+myList.forEach(function(l){
+    l.style.backgroundColor = 'blue';
+})
+
+or 
+
+myList.forEach((l)=>l.style.color='pink')   // arrow function 
+
+
+3) getElementByClassName 
+
+const myList = document.getElementByClassName('list-item') - returns an HTML collection
+
+getElementBy... methods return HTML collections
+HTML collections are dynamic - meaning it automatically updates to reflect changes in the DOM. 
+If elements are added or removed from the document, the collection is updated automatically.
+
+How to loop over an HTML collection? 
+HTML collections has to be converted into an Array 
+
+const convertedArray = Array.from(myList);
+
+loop over using for each 
+convertedList.forEach((li)=>li.style.color='orange')
