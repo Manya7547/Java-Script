@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color:#fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent)
+    console.log(parent.children)  //gives an HTML collection - iterable using for 
+    console.log(parent.children[2].innerHTML)  //wednesday 
+    console.log(parent.children[1].style.color = 'yellow')  // turns tuesday into yellow
+
+    // iterating through children 
+    for(let i = 0 ; i<parent.children.length ; i++){
+        console.log(parent.children[i].innerHTML)
+    }
+
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild); 
+
+    const dayOne = document.querySelector('.day') // selects first occurence
+    console.log(dayOne);  
+    console.log(dayOne.parentElement);  // returns parent element
+    console.log(dayOne.nextElementSibling); // next sibling - tuesday
+
+    console.log("NODES: ", parent.childNodes);  //gives a very complex tree structure 
+
+
+</script>
+</html>

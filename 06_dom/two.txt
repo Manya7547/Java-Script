@@ -1,0 +1,16 @@
+// how to display data from DB to web page ?? 
+
+*********** parent and children *****************
+
+<script>:  element is used to embed or reference executable code, typically JavaScript. 
+This allows web developers to add interactivity, control the behavior of web pages, and 
+dynamically manipulate the content of the page. Scripts can be embedded directly within the
+HTML document or included from an external file.
+
+- Parent and child elements 
+- for looping children elements
+- accessing a single child element - we can change it's texts and style 
+- firstElementChild - return the first child element of a specified element.
+- lastElementChild - return the last child element of a specified element
+
+
