@@ -1,0 +1,17 @@
+Creating an element:
+    document.createElement('div') - any element tag 
+    save it in a const elementName
+Adding properties/attributes  to it:
+    elementName.id = " "
+    elementName.class = " "
+    elementName.setAttribute(attributeName,value) - ('title','generated title')
+    elementName.style.backgroundcolo = 'blue'
+    elementName.style.padding = "12px"
+    div.innerText = "Hello There" -  not preferred because this overwrites 
+    const addText = document.createTextNode('Hello there manya')
+    div.appendChild(addText)
+This element is shown in console but not in the web page - we need to attatch/append the the element as a child. 
+    document.body.appendChild(div)
+
+This whole thing can be wrapped inside a function - call it - creatediv - this can be a reusable code 
+This can also be wrapped around a loop 
