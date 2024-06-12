@@ -1,0 +1,7 @@
+Edit & Remove DOM Elements: 
+
+designing a function to add list item
+- create list item element
+- add innerHTML in that element
+- select the class of document where you will append the child (element)
+- run that function
