@@ -5,3 +5,7 @@ designing a function to add list item
 - add innerHTML in that element
 - select the class of document where you will append the child (element)
 - run that function
+
+2nd method - directly append the child 
+
+remove the element - .remove() method 
