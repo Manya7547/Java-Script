@@ -1,0 +1,32 @@
+Javascript 
+- syncronous by default - it is single threaded 
+- Each operation must complete before the next one begins. This means that tasks are performed sequentially, one after another, and no two pieces of code can run at the same time.
+
+Execution Content:
+- exexurte one line of code at a time
+- each operation waits for the last one to complete before executing 
+
+Two typs of code in JS: Blocking Code and Non Blocking Code 
+- Blocking Code - block the flow of program. 
+- Non blocking code - do not block execution. 
+
+JS Engine - Memory heap + call stack 
+
+Web API
+Found in the browser environment.
+Provides various features and functionalities like DOM manipulation, timers (setTimeout, setInterval), fetch for network requests, etc.
+These are not part of the JavaScript engine itself but are provided by the browser.
+Node.js also provides its own set of APIs, but it doesn’t include the DOM.
+Asynchronous Execution with Promises and Callback Queues
+Promise Queue (Microtask Queue/High Priority Queue):
+
+Contains callbacks from resolved promises (e.g., .then() callbacks).
+Has a higher priority than the task queue.
+When the call stack is empty, the event loop checks the promise queue first and processes those callbacks before moving to the task queue.
+Task Queue (Macrotask Queue):
+
+Contains callbacks from setTimeout, setInterval, fetch, and other asynchronous tasks.
+When the call stack is empty and the promise queue is empty, the event loop processes the task queue.
+Registering Callbacks
+When asynchronous functions like setTimeout or setInterval are called, they are registered in the Web API environment.
+Once the timer completes, the corresponding callback function is moved to the task queue.
