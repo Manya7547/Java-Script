@@ -67,7 +67,7 @@ undefined = "undefined"
 
 str1 = "Hello";
 str2 = "Manya";
-console.log(str1 + str2);
+console.log(str1 + str2);  // HelloManya
 
 console.log("1" + 2 + 2); // 122
 console.log(1 + 2 + "2"); // 32 why?
