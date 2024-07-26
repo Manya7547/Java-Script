@@ -19,20 +19,65 @@
    </div>
 </body>
 <script>
-    // Approach 1 - write onclick directly in html code - not a good one
+    // Browser events - triggered when an activity is performed 
+
+    // Approach 1 - inject onclick directly in html code - not a good one. alt="" onlick="alert("you clicked")"
+    
     // Approach 2 - this method is when you apply onclick (not using event listener)
     // document.getElementById('owl').onclick = function(){
     //     alert('Hello! you clicked on owl image!');
-    // }
-    // Approach 3: add an event listener - click event. There is a third parameter which is by default false so you dont need to write false explicitly
-    //Approach 4: attatchEvent - used earlier 
-    //Approach 5: JQuery - on
+    // } - gives less features 
 
-    document.getElementById('owl').addEventListener('click', function(e){
-        console.log(e);
+    // Approach 3: add an event listener - click event. There is a third parameter which is by default false so you dont need to write false explicitly
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(e);
+    //     alert("owl clicked");
+    // }, false);
+
+    // this approach gives alot more types of features like click, double click, etc
+    // event gives the follwing values that can be seen when we console.log(e) -  pointerEvent
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // position related - clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // Event Propagation - bubbling - we will create two events 1) clicking id="images" 2) clicking owl image
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked on images");
+    // }, false);
+
+    // document.getElementById("owl").addEventListener("click", function(e){
+    //     console.log("clicked on owl");
+    // },false);
+    // when you click on owl - it will first log "clicked on owl" and then "clicked on images" - this happens when third parameter is false 
+    // otherwise if true - enabling capturing - it will do the opposite 
+    // you can decide what to do according to the use case 
+   // to stop bubbling - write e.stopPropagation() inside the function
+
+//    document.getElementById("google").addEventListener(
+//     'click',
+//     function(e){
+//         console.log("google is clicked");
+//         e.preventDefault();  // prevent the default behavior of an event, it will not go to google page
+//     },
+//     false
+//    );
+    
+    //Approach 4: attatchEvent() - used earlier 
+
+    //Approach 5: JQuery - .on
+
+
+
+    // Activity : when you click on the images, they should disappear 
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName == 'IMG'){
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
     }, false);
 
-
-
+    
 </script>
 </html>

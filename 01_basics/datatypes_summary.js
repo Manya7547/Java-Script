@@ -1,7 +1,7 @@
 //  Two types - Primitive and non Primitive (Reference)
 
 // 1) Primitive 
-//  7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
+//  7 types : String, Number, Boolean, null, undefined, Symbol, BigInt
 
 const score = 100
 const scoreValue = 100.3  //is a number
@@ -52,7 +52,7 @@ Is JS statically language or dynamically typed language?
 
 let name1 = "Manya Sohal" 
 let name2 = name1;  //a copy of name1 is assigned to name2
-name2 = "Manan Khaneja" //here the copy is changed not the actual value
+name2 = "Pooja Sohal" //here the copy is changed not the actual value
 console.log(name1);
 console.log(name2); 
 
