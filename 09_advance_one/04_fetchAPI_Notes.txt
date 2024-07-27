@@ -1,0 +1,26 @@
+fetch() method:
+- The fetch() method of the Window interface starts the process of fetching a resource from the network, returning a promise that is fulfilled once the response is available.
+- fetch() request is handled by the browser's Web API.
+- A fetch() promise only rejects when the request fails, for example, because of a badly-formed request URL or a network error. 
+- A fetch() promise does not reject if the server responds with HTTP status codes that indicate errors (404, 504, etc.). 
+- Instead, a then() handler must check the Response.ok and/or Response.status properties.
+- The response is placed in the microtask queue (also known as the priority queue) once it is ready.
+- fetch('https://api.example.com/data', {
+    method: 'POST'
+});
+- second parameter can be an object containing any custom settings you want to apply to the request.
+
+Microtask Queue:
+Purpose: The microtask queue holds microtasks, which are smaller tasks that need to be executed immediately after the current operation completes and before any tasks from the task queue are processed.
+Examples: Promises (e.g., .then() callbacks from fetch()), MutationObserver.
+Operation: Microtasks are executed before tasks from the task queue. The event loop continues to process all microtasks in the microtask queue before moving to the next task in the task queue.
+
+Event Loop:
+The event loop is a mechanism that coordinates the execution of code, event handling, and non-blocking operations in the JavaScript runtime.
+The event loop continuously checks the call stack to see if it is empty.
+If the call stack is empty, it checks the task queues and moves tasks to the call stack for execution.
+
+Execution Priority
+1. Synchronous Code: Executed directly on the call stack.
+2. Microtask Queue: Executed next. This includes promise callbacks and other microtasks.
+3. Task Queue: Executed last. This includes callbacks from setTimeout(), setInterval(), and other macrotasks.
