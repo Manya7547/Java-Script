@@ -1,0 +1,34 @@
+XMLHttpRequest:
+- also called XHR
+- JavaScript object that provides a way to interact with servers via HTTP. 
+- It allows web pages to make asynchronous requests to a server, receive data, and update the web page without requiring a full page reload.
+- This is the foundation of Ajax (Asynchronous JavaScript and XML).
+- HTTP Methods: Supports GET, POST, PUT, DELETE, and other HTTP methods.
+- Response Types: Can handle various types of data including text, JSON, XML, and more.
+
+Key Points about XMLHttpRequest object: 
+- Creating the Request: new XMLHttpRequest() creates an XMLHttpRequest object.
+- Configuring the Request: xhr.open(method, URL, async) initializes the request with the desired HTTP method and URL. 
+The third parameter (async) specifies whether the request should be asynchronous (true by default).
+- Sending the Request: xhr.send() sends the request to the server.
+- the instance is also called an ajax object.
+- Handling the Response:
+xhr.onload: Fired when the request completes successfully.
+xhr.onerror: Fired if the request fails due to network issues
+
+XMLHttpRequest.readyState
+- provides the current state of the request. It can have one of five values, indicating the progress of the request.
+
+readyState Values
+0 (UNSENT):
+The XMLHttpRequest object has been created, but the open() method hasn't been called yet.
+1 (OPENED):
+The open() method has been called, but the send() method hasn't been called yet.
+2 (HEADERS_RECEIVED):
+The send() method has been called, and the response headers and status are available.
+3 (LOADING):
+The response is being downloaded; responseText holds partial data.
+4 (DONE):
+The request is complete, and the response is fully received.
+
+
