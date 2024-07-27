@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async Code 2</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+
+    // // setInterval - repeatedly execute a specified function or code snippet at fixed time intervals.
+    // const sayDate = function(str){
+    //     console.log(str, Date.now());
+    // }
+
+    // // this third parameter is passed to the callback function. 
+    // const inervalId = setInterval(sayDate,1000,"hi"); 
+    // clearInterval(inervalId);
+
+    // To Do: when you click start, it starts logging a string until you click stop
+
+    let ref;
+    document.getElementById('start').addEventListener('click',function(){
+        ref = setInterval(function(){
+            console.log('hello');
+        },500);
+    }, false);
+
+    document.getElementById('stop').addEventListener('click',function(){
+        console.log('stopped');
+        clearInterval(ref);
+    })
+
+
+</script>
+</html>
