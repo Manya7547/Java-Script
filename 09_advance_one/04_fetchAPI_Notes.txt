@@ -10,6 +10,19 @@ fetch() method:
 });
 - second parameter can be an object containing any custom settings you want to apply to the request.
 
+Internal mechanism of fetch().
+It has two parts:
+1. Handles Web Browser API or Node-based API:
+- Network Request: The fetch() function sends a network request using the appropriate API depending on whether it’s running in a web browser or a Node.js environment.
+- Resource Delivery: The resource (response data) is provided by the browser’s or Node.js’s network stack.
+- Promise Resolution: If the request is successful, the promise returned by fetch() is resolved with the Response object. If the request fails (e.g., due to network errors), the promise is rejected with an error.
+
+2. Memory Space Reservation and Internal Mechanisms:
+- Response Data Handling: Memory is allocated for storing the response data when it’s received.
+- Internal Arrays: Two internal arrays, onFulfilled[] and onRejection[], are maintained to handle promise fulfillment and rejection respectively. These arrays store the functions to be called when the promise is either resolved or rejected.
+- Promise Chaining: These arrays cannot be accessed directly but are used internally to manage the promise chain, invoking appropriate callbacks (e.g., .then() for fulfilled promises and .catch() for rejected ones).
+
+
 Microtask Queue:
 Purpose: The microtask queue holds microtasks, which are smaller tasks that need to be executed immediately after the current operation completes and before any tasks from the task queue are processed.
 Examples: Promises (e.g., .then() callbacks from fetch()), MutationObserver.
