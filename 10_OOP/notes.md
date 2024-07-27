@@ -16,6 +16,9 @@ OOP is a programming paradigm.
 ## Prototype
 
 - Every JavaScript object has a prototype, which is another object that serves as a template from which it inherits methods and properties.
+- JavaScript's default behavior is prototypal. This means that JavaScript uses prototypes to implement inheritance, and every object in JavaScript has a prototype from which it can inherit properties and methods.
+- JavaScript objects form a chain of prototypes, known as the prototype chain.
+- If a property or method is not found on the object, JavaScript looks up the prototype chain until it finds the property/method or reaches the end of the chain.
 
 ## Why use OOP?
 
