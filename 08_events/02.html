@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Async Code </h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    // 1) setTimeout() - execute a specified piece of code or function after a certain amount of time has passed
+    const sayManya = function(){
+        console.log('Manya Sohal');
+    }
+    setTimeout(sayManya, 2000);
+
+    const changeTitle = function(){
+        document.querySelector('h1').innerHTML = "Title has been changed";
+    }
+    const changeText = setTimeout(changeTitle, 2000);
+
+    // 2) clearTimeout - used to cancel a timeout previously established by calling setTimeout. 
+    // This prevents the specified code from executing if the timeout has not already been reached.
+    // we have to give the reference of the setTimeout
+
+
+    // if i click the stop button before 2 seconds the time out will be cleared and the title will not change
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeText);
+        console.log('STOPPED');
+    })
+</script>
+</html>
