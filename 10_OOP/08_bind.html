@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    // This is an example of how bind() was used few years ago
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            // business requiretment - 
+            // 1) once the page is loaded, react obj is created. 
+            // 2) I want to get a reference of the button 
+            // 3) Once a button is clicked some operation is performed. form submitted message
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this))
+        }
+        handleClick(){
+                console.log('Button is clicked');
+                console.log(this.server);
+            }
+    }
+    //  bind method is used to ensure that the 'this' context within the handleClick method refers to the instance of the React class when the button is clicked. 
+    // This is important because without bind, the this context inside handleClick would refer to the DOM element that triggered the event (i.e., the button),
+    //  rather than the instance of the React class.
+    const app = new React();
+</script>
+</html>
