@@ -6,6 +6,8 @@
     <title>Closure</title>
 </head>
 <body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
     
 </body>
 <script>
@@ -19,5 +21,31 @@ function init() {
 }
 init();
 
+// closure: the whole inner and outer function's lexical scope will be returned in this case
+function makeFunc() {
+    const name = "Mozilla";
+    function displayName() {
+        console.log(name);
+        }
+    return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
+
+
+</script>
+<script>
+    // use case of closure:
+    function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
 </script>
 </html>
